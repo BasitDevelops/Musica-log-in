@@ -92,7 +92,7 @@ if (window.location.href == 'http://127.0.0.1:5500/signUpPage.html' || window.lo
 //
 
 //
-if (window.location.href == 'http://127.0.0.1:5500/index.html' || window.location.href == 'https://basitdevelops.github.io/Musica-log-in/') {
+if (window.location.href == 'https://basitdevelops.github.io/Musica-log-in/') {
     usernameInput.addEventListener('change', () => {
         if (!localStorage.getItem(JSON.stringify(usernameInput.value))) {
             alertBox.classList.add('display-alert');
