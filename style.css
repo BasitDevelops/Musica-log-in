@@ -1,0 +1,67 @@
+@font-face {
+    font-family: quicksand;
+    src: url(./Quicksand_Bold\ copy.otf);
+}
+
+* {
+    font-family: quicksand;
+}
+
+#alert-box {
+    opacity: 0;
+}
+
+.display-alert {
+    opacity: 1 !important;
+}
+
+body {
+    background-color: #1e2224 !important;
+}
+
+.title {
+    color: #a4c7c6;
+}
+
+.title span {
+    color: #f9cd66;
+}
+
+.form {
+    background-color: #1a1e1f !important;
+}
+
+button {
+    box-sizing: border-box;
+    background-color: #1a1e1f !important;
+    color: #a4c7c6 !important;
+    border: 1px solid #a4c7c6;
+    padding: .25rem;
+}
+
+button:hover {
+    background-color: #a4c7c6 !important;
+    color: #1a1e1f !important;
+}
+
+p {
+    color: white !important;
+}
+
+.or {
+    color: white !important;
+}
+
+a {
+    text-decoration: none !important;
+    color: #a4c7c6 !important;
+}
+
+a:hover {
+    text-decoration: underline !important
+}
+
+i {
+    color: grey;
+    opacity: 0.5;
+}
