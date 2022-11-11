@@ -11,13 +11,13 @@ const usernameAlertIcon = document.querySelector('#username-alert-icon');
 const emailAlertIcon = document.querySelector('#email-alert-icon');
 const passwordAlertIcon = document.querySelector('#password-alert-icon');
 
-function formAlert(message, color) {
+const formAlert = (message, color) => {
     alertText.innerHTML = message;
     alertBox.classList.add(`alert-${color}`);
 }
 
-if (window.location.href == 'http://127.0.0.1:5500/signUpPage.html') {
-    usernameInput.addEventListener('change', function () {
+if (window.location.href == 'http://127.0.0.1:5500/signUpPage.html' || window.location.href == 'https://basitdevelops.github.io/Musica-log-in/signUpPage.html') {
+    usernameInput.addEventListener('change', () => {
         if (usernameInput.value.length < 5) {
             alertBox.classList.add('display-alert');
             formAlert('Username cannot be less than 5 characters.', 'danger');
@@ -36,7 +36,7 @@ if (window.location.href == 'http://127.0.0.1:5500/signUpPage.html') {
         }
     })
 
-    emailInput.addEventListener('change', function () {
+    emailInput.addEventListener('change', () => {
         if (emailFilter.test(emailInput.value)) {
             alertBox.classList.remove('display-alert');
             emailAlertIcon.innerHTML = '<i class="fa-regular fa-circle-check text-success"></i>';
@@ -57,7 +57,7 @@ if (window.location.href == 'http://127.0.0.1:5500/signUpPage.html') {
         }
     })
 
-    passwordInput.addEventListener('change', function () {
+    passwordInput.addEventListener('change', () => {
         if (passwordInput.value.length < 5) {
             alertBox.classList.add('display-alert');
             formAlert('Password cannot be less than 5 characters.', 'danger');
@@ -71,7 +71,7 @@ if (window.location.href == 'http://127.0.0.1:5500/signUpPage.html') {
         }
     })
 
-    submitBtn.addEventListener('click', function () {
+    submitBtn.addEventListener('click', () => {
         if (userNameFlag && emailFlag && passwordFlag) {
             alertBox.classList.remove('display-alert');
             localStorage.setItem(JSON.stringify(userName), JSON.stringify(userName));
@@ -79,7 +79,7 @@ if (window.location.href == 'http://127.0.0.1:5500/signUpPage.html') {
             localStorage.setItem(JSON.stringify(password), JSON.stringify(password));
             setTimeout(() => {
                 alert('Your account has been created successfully, kindly login to access B.Musica.');
-                window.location.href = 'http://127.0.0.1:5500/index.html';
+                window.location.href = 'https://basitdevelops.github.io/Musica-log-in/';
             }, 1000);
         } else {
             alertBox.classList.add('display-alert');
@@ -92,8 +92,8 @@ if (window.location.href == 'http://127.0.0.1:5500/signUpPage.html') {
 //
 
 //
-if (window.location.href == 'http://127.0.0.1:5500/index.html') {
-    usernameInput.addEventListener('change', function () {
+if (window.location.href == 'http://127.0.0.1:5500/index.html' || window.location.href == 'https://basitdevelops.github.io/Musica-log-in/') {
+    usernameInput.addEventListener('change', () => {
         if (!localStorage.getItem(JSON.stringify(usernameInput.value))) {
             alertBox.classList.add('display-alert');
             formAlert('Invalid username.', 'danger');
@@ -107,7 +107,7 @@ if (window.location.href == 'http://127.0.0.1:5500/index.html') {
         }
     })
 
-    passwordInput.addEventListener('change', function () {
+    passwordInput.addEventListener('change', () => {
         if (!localStorage.getItem(JSON.stringify(passwordInput.value))) {
             alertBox.classList.add('display-alert');
             formAlert('Invalid password.', 'danger');
@@ -121,7 +121,7 @@ if (window.location.href == 'http://127.0.0.1:5500/index.html') {
         }
     })
 
-    submitBtn.addEventListener('click', function () {
+    submitBtn.addEventListener('click', () => {
         if (userNameFlag && passwordFlag) {
             alertBox.classList.remove('display-alert');
             setTimeout(() => {
